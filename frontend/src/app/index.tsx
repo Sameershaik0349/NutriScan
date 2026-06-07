@@ -1369,6 +1369,7 @@ export default function HomeScreen() {
             <Text style={styles.tabHeading}>Diagnostics Scanner</Text>
             {(() => {
               const responseData = scanResult.diagnosed_food || scanResult;
+              const food = responseData;
               const foodName = responseData.product_name || responseData.detected_food_name || "Unknown Food";
               const rawVerdict = responseData.health_verdict || "MODERATION";
               const grade = (responseData.health_grade || (rawVerdict === 'GOOD' ? 'A' : 'D') || 'C').toUpperCase();
